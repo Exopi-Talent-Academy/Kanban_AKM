@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+
+# Build output
+bin/
+obj/
+
+# Node.js (if using React/Vite)
+node_modules/
+dist/
