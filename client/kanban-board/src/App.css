@@ -1,0 +1,66 @@
+:root {
+    font-family: Arial, sans-serif;
+    color: #172b4d;
+    /*background: #702404;*/
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background-color: #702404;
+    background-image: url("/brick_background.png");
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: 70px auto;
+}
+
+main {
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.board {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.column {
+    width: 280px;
+    min-height: 600px;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #BEC6C1;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .column-header h2 {
+        margin-top: 0;
+        font-size: 1.1rem;
+        color: rgb(0, 0, 0)
+    }
+
+.card {
+    margin-top: 0.75rem; /* Margin between each note */
+    padding: 3rem; /* The amount of padding on top and bottom of the note. */
+    border-radius: 1px; /* This is for the roundness of the corners. */
+    background: rgb(223, 213, 124); /* Looks kind of like a post-it note.*/
+    box-shadow: 2px 12px 3px rgb(0 0 0 / 15%);
+}
+
+    .card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1rem;
+    }
+
+    .card p {
+        margin: 0;
+        color: #5e6c84;
+    }
