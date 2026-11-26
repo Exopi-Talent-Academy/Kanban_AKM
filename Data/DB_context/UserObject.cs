@@ -3,6 +3,7 @@
     public class UserObject
     {
         public string ID { get; set; }
-        public List<BoardObject> boards { get; set; }
+        public List<BoardObject> Boards { get; set; }
+
     }
 }
