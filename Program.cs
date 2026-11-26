@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddMvc();
+builder.Services.AddDbContext<Kanban_AKM.Models.DB_contexts.DB_Context>(options =>
+  options.UseNpgsql("User ID=postgres;Host=localhost;Port=5432;Database=ProductsDb;Pooling=true;"));
 
 var app = builder.Build();
 
