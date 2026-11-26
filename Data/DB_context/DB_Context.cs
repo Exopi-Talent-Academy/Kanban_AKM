@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Kanban_AKM.Models.DB_contexts;
+namespace Kanban_AKM.Data.DB_context;
 
 public class DB_Context : DbContext
 {
