@@ -1,0 +1,41 @@
+# .NET / Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.cobertura.xml
+coverage/
+*.log
+
+# ASP.NET Core local files
+appsettings.Local.json
+appsettings.*.Local.json
+Properties/serviceDependencies.local.json
+
+
+# React / Node
+node_modules/
+dist/
+build/
+.vite/
+.next/
+*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Keep environment templates, ignore local environment files
+.env
+.env.*
+!.env.example
+
+# IDE and OS files
+.idea/
+.DS_Store
+Thumbs.db
