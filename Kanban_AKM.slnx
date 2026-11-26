@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Kanban_AKM.csproj" />
+  <Project Path="src/Kanban_AKM.Web/Kanban_AKM.Web.csproj" />
+  <Project Path="tests/Kanban_AKM.Tests/Kanban_AKM.Tests.csproj" />
+  <Project Path="client/kanban-board/kanban-board.csproj" />
 </Solution>
