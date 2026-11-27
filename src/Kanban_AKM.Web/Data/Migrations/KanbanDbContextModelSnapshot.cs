@@ -50,7 +50,7 @@ namespace Kanban_AKM.Web.Data.Migrations
                     b.ToTable("Boards");
                 });
 
-            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.TaskEntity", b =>
+            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.ColumnEntity", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,6 +59,28 @@ namespace Kanban_AKM.Web.Data.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<long?>("BoardEntityId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BoardEntityId");
+
+                    b.ToTable("Columns");
+                });
+
+            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.TaskEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<long?>("ColumnEntityId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("CreationDate")
@@ -79,7 +101,7 @@ namespace Kanban_AKM.Web.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BoardEntityId");
+                    b.HasIndex("ColumnEntityId");
 
                     b.ToTable("Tasks");
                 });
@@ -104,14 +126,26 @@ namespace Kanban_AKM.Web.Data.Migrations
                         .HasForeignKey("UserEntityId");
                 });
 
-            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.TaskEntity", b =>
+            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.ColumnEntity", b =>
                 {
                     b.HasOne("Kanban_AKM.Web.Models.Entities.BoardEntity", null)
-                        .WithMany("Tasks")
+                        .WithMany("Columns")
                         .HasForeignKey("BoardEntityId");
                 });
 
+            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.TaskEntity", b =>
+                {
+                    b.HasOne("Kanban_AKM.Web.Models.Entities.ColumnEntity", null)
+                        .WithMany("Tasks")
+                        .HasForeignKey("ColumnEntityId");
+                });
+
             modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.BoardEntity", b =>
+                {
+                    b.Navigation("Columns");
+                });
+
+            modelBuilder.Entity("Kanban_AKM.Web.Models.Entities.ColumnEntity", b =>
                 {
                     b.Navigation("Tasks");
                 });

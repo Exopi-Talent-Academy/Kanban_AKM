@@ -9,6 +9,7 @@ namespace Kanban_AKM.Web.Data
     {
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<BoardEntity> Boards { get; set; }
+        public DbSet<ColumnEntity> Columns { get; set; }
         public DbSet<TaskEntity> Tasks { get; set; }
     }
 }
