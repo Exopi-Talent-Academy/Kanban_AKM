@@ -3,7 +3,7 @@
 [Bb]in/
 [Oo]bj/
 *.user
-*.su                o
+*.suo
 TestResults/
 *.trx
 *.coverage
