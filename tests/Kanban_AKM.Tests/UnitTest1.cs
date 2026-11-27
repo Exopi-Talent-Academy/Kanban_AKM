@@ -1,17 +1,19 @@
 ﻿using Kanban_AKM.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Kanban_AKM.Tests;
 
+[TestClass]
 public class HomeControllerTests
 {
-    [Fact]
+    [TestMethod]
     public void Privacy_ReturnsViewResult()
     {
         var controller = new HomeController();
 
         var result = controller.Privacy();
 
-        Assert.IsType<ViewResult>(result);
+        Assert.IsInstanceOfType<ViewResult>(result);
     }
 }
