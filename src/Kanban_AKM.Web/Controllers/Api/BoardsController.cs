@@ -16,7 +16,7 @@ public class BoardsController(IBoardService boardService) : ControllerBase
         long id,
         CancellationToken cancellationToken)
     {
-        var board = await boardService.GetBoardById(id, cancellationToken);
+        var board = await boardService.GetBoardByIdAsync(id, cancellationToken);
 
         return board is null
             ? NotFound()
