@@ -1,43 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Kanban_AKM.Web.Services;
+using Microsoft.AspNetCore.Mvc;
+
+using Kanban_AKM.Web.Models.DTOs.Boards;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Kanban_AKM.Controllers.Api
+namespace Kanban_AKM.Web.Controllers.Api;
+
+[Route("api/boards")]
+[ApiController]
+public class BoardsController(IBoardService boardService) : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class BoardsController : ControllerBase
+    [HttpGet("{id:long}")]
+    public async Task<ActionResult<BoardDto>> GetBoard(
+        long id,
+        CancellationToken cancellationToken)
     {
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        var board = await boardService.GetBoardById(id, cancellationToken);
 
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ValuesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        return board is null
+            ? NotFound()
+            : Ok(board);
     }
 }

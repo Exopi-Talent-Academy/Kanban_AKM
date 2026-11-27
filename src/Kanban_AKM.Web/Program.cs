@@ -1,7 +1,15 @@
+using Kanban_AKM.Web.Data;
+using Kanban_AKM.Web.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<KanbanDbContext>(options =>
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddScoped<IBoardService, BoardService>();
 
 var app = builder.Build();
 
@@ -19,6 +27,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",
