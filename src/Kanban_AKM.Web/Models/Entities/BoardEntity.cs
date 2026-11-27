@@ -8,6 +8,6 @@ namespace Kanban_AKM.Web.Models.Entities
         public required string Title { get; set; }
         public string? Description { get; set; }
         public List<ColumnEntity> Columns { get; set; } = [];
-        public long Owner_ID { get; set; }
+        public long OwnerId { get; set; }
     }
 }
