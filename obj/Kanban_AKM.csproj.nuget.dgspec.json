@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arnar Marinosonn\\Documents\\exopiGithub\\Kanban_AKM\\Kanban_AKM.csproj": {}
+    "C:\\Users\\Mathias Helmuth\\Desktop\\exopi\\uge09\\KanBan\\Kanban_AKM\\Kanban_AKM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arnar Marinosonn\\Documents\\exopiGithub\\Kanban_AKM\\Kanban_AKM.csproj": {
+    "C:\\Users\\Mathias Helmuth\\Desktop\\exopi\\uge09\\KanBan\\Kanban_AKM\\Kanban_AKM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arnar Marinosonn\\Documents\\exopiGithub\\Kanban_AKM\\Kanban_AKM.csproj",
+        "projectUniqueName": "C:\\Users\\Mathias Helmuth\\Desktop\\exopi\\uge09\\KanBan\\Kanban_AKM\\Kanban_AKM.csproj",
         "projectName": "Kanban_AKM",
-        "projectPath": "C:\\Users\\Arnar Marinosonn\\Documents\\exopiGithub\\Kanban_AKM\\Kanban_AKM.csproj",
-        "packagesPath": "C:\\Users\\Arnar Marinosonn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arnar Marinosonn\\Documents\\exopiGithub\\Kanban_AKM\\obj\\",
+        "projectPath": "C:\\Users\\Mathias Helmuth\\Desktop\\exopi\\uge09\\KanBan\\Kanban_AKM\\Kanban_AKM.csproj",
+        "packagesPath": "C:\\Users\\Mathias Helmuth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mathias Helmuth\\Desktop\\exopi\\uge09\\KanBan\\Kanban_AKM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arnar Marinosonn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mathias Helmuth\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
