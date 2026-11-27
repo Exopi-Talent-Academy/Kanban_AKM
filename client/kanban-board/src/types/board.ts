@@ -1,16 +1,16 @@
 // MHM: These are the JSON responses expected from the API.
-export type CardDto = {
+export type TaskDto = {
     id: string;
     title: string;
     description: string | null;
-    position: number;
+    priority: number;
 };
 
 export type ColumnDto = {
     id: string;
-    name: string;
+    title: string;
     position: number;
-    cards: CardDto[];
+    cards: TaskDto[];
 };
 
 export type BoardDto = {

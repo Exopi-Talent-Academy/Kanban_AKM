@@ -33,6 +33,16 @@ main {
     padding: 1rem;
     border-radius: 8px;
     background: #BEC6C1;
+    transition:
+        background-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.column.drag-over {
+    background: #aeb8b2;
+    box-shadow:
+        0 0 0 3px rgb(255 255 255 / 70%),
+        0 0 20px rgb(0 0 0 / 25%);
 }
 
 .column-header {
@@ -53,6 +63,12 @@ main {
     border-radius: 1px; /* This is for the roundness of the corners. */
     background: rgb(223, 213, 124); /* Looks kind of like a post-it note.*/
     box-shadow: 2px 12px 3px rgb(0 0 0 / 15%);
+    position: relative;
+    cursor: grab;
+    user-select: none;
+    transition:
+        opacity 250ms ease,
+        transform 80ms ease; /* The speed at which the card transforms in transition*/
 }
 
     .card h3 {
@@ -64,3 +80,100 @@ main {
         margin: 0;
         color: #5e6c84;
     }
+
+.card:active {
+    cursor: grabbing;
+}
+
+.card.dragging{
+    opacity: 0.35;
+    transform: rotate(2deg);
+}
+
+.card:hover{
+    outline: 2px solid rgb(23 42 77 / 45%);
+}
+
+.edit-hint {
+    display: block;
+    margin-top: 1rem;
+    color: rgb(23 43 77 / 60%);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: rgb(0 0 0 / 45%);
+}
+
+.edit-dialog {
+    width: min(500px, 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    background: #f4f5f7;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 35%);
+}
+
+.edit-dialog h2 {
+    margin-top: 0;
+}
+
+.edit-dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.edit-dialog label {
+    margin-top: 0.15rem;
+    font-weight: bold;
+}
+
+.edit-dialog input,
+.edit-dialog textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.85rem;
+    border: 4px solid #7F1E1A;
+    border-radius: 2px;
+    font: inherit;
+    resize: vertical;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.dialog-actions button {
+    padding: 0.7rem 1rem;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dialog-actions button[type="submit"]{
+    background: #172b4d;
+    color: white;
+}
+
+.dialog-actions button[type="button"] {
+    background: #d7dadd;
+    color: #172b4d;
+}
+
+.empty-column {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px dashed rgb(23 43 77 / 15%);
+    color: rgb(23 43 77 / 50%);
+    text-align: center;
+}
